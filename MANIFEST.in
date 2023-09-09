@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include gad_management *.css
+recursive-include gad_management *.csv
+recursive-include gad_management *.html
+recursive-include gad_management *.ico
+recursive-include gad_management *.js
+recursive-include gad_management *.json
+recursive-include gad_management *.md
+recursive-include gad_management *.png
+recursive-include gad_management *.py
+recursive-include gad_management *.svg
+recursive-include gad_management *.txt
+recursive-exclude gad_management *.pyc
