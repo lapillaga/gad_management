@@ -7,6 +7,14 @@ app_description = "Ecuadorian Gads App Management"
 app_email = "lpillaga@gmail.com"
 app_license = "MIT"
 
+fixtures = [
+    "Custom Field",
+]
+
+# doctype_js = {
+#     "Purchase Order": "public/js/purchase_order.js"
+# }
+
 # Includes in <head>
 # ------------------
 

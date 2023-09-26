@@ -1,0 +1,10 @@
+# How to generate the translation files
+bench --site gad.test get-untranslated en /Users/luispillaga/Projects/gad/erp/frappe-bench/en.csv
+
+# How to load new translations es-EC
+bench --site gad.test update-translations es-EC /Users/luispillaga/Projects/gad/erp/frappe-bench/es-EC.csv
+
+# How to install python dependencies
+Add the dependencies to the requirements.txt file and run the following command
+then run
+bench setup requirements

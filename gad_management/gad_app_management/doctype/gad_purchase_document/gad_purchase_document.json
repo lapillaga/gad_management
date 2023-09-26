@@ -1,0 +1,222 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:IC-{#####}",
+ "creation": "2023-09-20 22:28:06.992711",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_break_1",
+  "document_type",
+  "purchase_order",
+  "column_break_1",
+  "document_date",
+  "project",
+  "amended_from",
+  "tab_break_2",
+  "doc_1_title",
+  "doc_1_responsible",
+  "available_stock",
+  "doc_1_download_section",
+  "download_doc_1",
+  "view_doc_1",
+  "tab_break_3",
+  "doc_2_title",
+  "document_title",
+  "goals_section",
+  "general_objective",
+  "specific_goals",
+  "justification_section",
+  "problem_description",
+  "justification",
+  "conclusion_section",
+  "conclusion",
+  "doc_2_download_section"
+ ],
+ "fields": [
+  {
+   "default": "Good",
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tipo de documento",
+   "options": "Good\nService\nCatalog",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Orden de compra",
+   "options": "Purchase Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha del documento",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gad Purchase Document",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_break_1",
+   "fieldtype": "Tab Break",
+   "label": "General"
+  },
+  {
+   "fieldname": "tab_break_2",
+   "fieldtype": "Tab Break",
+   "label": "1. Certificado"
+  },
+  {
+   "fieldname": "doc_1_responsible",
+   "fieldtype": "Link",
+   "label": "Responsable de bienes",
+   "options": "Gad Member"
+  },
+  {
+   "fieldname": "download_doc_1",
+   "fieldtype": "Button",
+   "label": "Descargar word"
+  },
+  {
+   "fieldname": "view_doc_1",
+   "fieldtype": "Button",
+   "label": "Ver PDF"
+  },
+  {
+   "fieldname": "available_stock",
+   "fieldtype": "Table",
+   "label": "Bienes disponibles",
+   "options": "Available Stock"
+  },
+  {
+   "fieldname": "doc_1_title",
+   "fieldtype": "HTML",
+   "options": "<h5 class=\"bold mb-3 mt-2\">\n  Certificado de disponibilidad de bienes\n  <span class=\"badge badge-warning\">Bienes</span>\n</h5>"
+  },
+  {
+   "fieldname": "tab_break_3",
+   "fieldtype": "Tab Break",
+   "label": "2. Informe"
+  },
+  {
+   "fieldname": "doc_2_title",
+   "fieldtype": "HTML",
+   "options": "<h5 class=\"bold mb-3 mt-2\">\n  Informe de necesidad\n  <span class=\"badge badge-warning\">Bienes</span>\n  <span class=\"badge badge-info\">Servicios</span>\n</h5>"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Proyecto",
+   "options": "Project"
+  },
+  {
+   "fieldname": "document_title",
+   "fieldtype": "Small Text",
+   "label": "T\u00edtulo"
+  },
+  {
+   "fieldname": "general_objective",
+   "fieldtype": "Small Text",
+   "label": "Objetivo General "
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "goals_section",
+   "fieldtype": "Section Break",
+   "label": "Objetivos"
+  },
+  {
+   "fieldname": "problem_description",
+   "fieldtype": "Text Editor",
+   "label": "Situaci\u00f3n actual/Problematica"
+  },
+  {
+   "fieldname": "justification",
+   "fieldtype": "Text Editor",
+   "label": "Justificaci\u00f3n"
+  },
+  {
+   "fieldname": "specific_goals",
+   "fieldtype": "Table",
+   "label": "Objectivos Espec\u00edficos",
+   "options": "Gad Document Specific Goal"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "justification_section",
+   "fieldtype": "Section Break",
+   "label": "Problematica/Justificaci\u00f3n"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "conclusion_section",
+   "fieldtype": "Section Break",
+   "label": "Conclusiones"
+  },
+  {
+   "fieldname": "conclusion",
+   "fieldtype": "Text Editor",
+   "label": "Conclusi\u00f3n"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "doc_2_download_section",
+   "fieldtype": "Section Break",
+   "label": "Descargas"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "doc_1_download_section",
+   "fieldtype": "Section Break",
+   "label": "Descargas"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-09-20 23:42:03.408470",
+ "modified_by": "Administrator",
+ "module": "Gad App Management",
+ "name": "Gad Purchase Document",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}
