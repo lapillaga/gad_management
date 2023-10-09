@@ -16,7 +16,9 @@
   "tab_break_1",
   "po_template_1",
   "column_break_2",
-  "po_template_2"
+  "po_template_2",
+  "tab_break_2",
+  "memo_template"
  ],
  "fields": [
   {
@@ -75,12 +77,22 @@
    "fieldtype": "Data",
    "label": "Nombre corto",
    "reqd": 1
+  },
+  {
+   "fieldname": "tab_break_2",
+   "fieldtype": "Tab Break",
+   "label": "Plantillas"
+  },
+  {
+   "fieldname": "memo_template",
+   "fieldtype": "Attach",
+   "label": "Plantilla general Memos"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-09-11 23:09:41.328231",
+ "modified": "2023-10-05 20:57:25.157877",
  "modified_by": "Administrator",
  "module": "Gad App Management",
  "name": "Gad Settings",

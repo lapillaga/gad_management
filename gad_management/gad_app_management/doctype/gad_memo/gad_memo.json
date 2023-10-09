@@ -1,17 +1,28 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:naming_series",
  "creation": "2023-09-21 22:44:15.550177",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "date",
-  "recipient",
+  "naming_series",
   "sender",
+  "sender_display",
+  "date",
+  "column_break_1",
+  "template",
+  "recipient",
+  "recipient_display",
+  "amended_from",
+  "section_break_1",
   "subject",
-  "amended_from"
+  "section_break_3",
+  "content",
+  "section_break_2",
+  "attachments"
  ],
  "fields": [
   {
@@ -22,25 +33,16 @@
    "reqd": 1
   },
   {
-   "fieldname": "recipient",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Destinatario",
-   "options": "Gad Member",
-   "reqd": 1
-  },
-  {
-   "fieldname": "sender",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Remitente",
-   "options": "Gad Member",
-   "reqd": 1
-  },
-  {
    "fieldname": "subject",
    "fieldtype": "Small Text",
    "label": "Asunto"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "N\u00famero",
+   "options": ".###\nDEP-SOC-.###.-.YYYY",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -50,15 +52,83 @@
    "options": "Gad Memo",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sender",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Remitente",
+   "options": "Gad Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "recipient",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Destinatario",
+   "options": "Gad Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "sender.full_name",
+   "fieldname": "sender_display",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Remitente"
+  },
+  {
+   "fetch_from": "recipient.full_name",
+   "fieldname": "recipient_display",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Destinatario"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table",
+   "label": "Documentos adjuntos",
+   "options": "Gad Memo Attachment"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Plantilla",
+   "options": "Gad Memo Template"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Small Text",
+   "label": "Contenido",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-09-21 22:44:15.550177",
+ "modified": "2023-10-05 23:19:54.505217",
  "modified_by": "Administrator",
  "module": "Gad App Management",
  "name": "Gad Memo",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
@@ -74,7 +144,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

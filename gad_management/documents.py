@@ -1,20 +1,21 @@
 import json
 import os
-from io import BytesIO
 
 import requests
 from docxtpl import DocxTemplate
 
 import frappe
 from frappe import _
-from frappe.utils import get_files_path
+from gad_management.common import (
+    get_gad_settings, get_template_url_from_settings, get_docx_template_io,
+    GENERATED_DOCX_PATH, generate_file_response
+)
 from gad_management.utils import get_formatted_date
 from werkzeug.wrappers import Response
 
 DOCUMENT_CONTEXT_MAPPING = {
     'po_template_1': lambda document: get_doc_1_context(document),
 }
-GENERATED_DOCX_PATH = '/tmp/generated.docx'
 GENERATED_PDF_PATH = '/tmp/generated.pdf'
 PSPDF_KIT_API_KEY = "pdf_live_tTlugWcsAsarYv6yA5UFJzUgtueXXqiXVpv8SNJmaWW"
 
@@ -56,47 +57,6 @@ def get_gad_purchase_doc(doc_name: str):
     return gad_purchase_doc
 
 
-def get_gad_settings():
-    """
-    Get the gad settings document
-    """
-    gad_settings = frappe.get_doc("Gad Settings")
-
-    if not gad_settings:
-        frappe.throw(_('Por favor debe crear una Configuración'))
-
-    return gad_settings
-
-
-def get_template_url(field_name: str):
-    """
-    Get the template url from the gad settings document
-    """
-    gad_settings = get_gad_settings()
-    template_url = gad_settings.get(field_name)
-
-    if not template_url:
-        frappe.throw(_('Por favor defina una plantilla en la Configuración'))
-
-    return template_url
-
-
-def get_docx_template_io(template_url: str):
-    """
-    Get the docx template as an IO object
-    """
-
-    path = os.path.join(
-        get_files_path(is_private=True),
-        os.path.basename(template_url),
-    )
-
-    with open(path, "rb") as fileobj:
-        filedata = fileobj.read()
-
-    return BytesIO(filedata)
-
-
 def get_generated_docx(
         template_url: str,
         doc_name: str,
@@ -124,16 +84,14 @@ def download_word(template_field_name: str, doc_name: str):
     """
     Generate a Word document based on a template and download it
     """
-    template_url = get_template_url(template_field_name)
+    template_url = get_template_url_from_settings(template_field_name)
     filedata = get_generated_docx(
         template_url,
         doc_name,
         template_field_name,
     )
 
-    frappe.local.response.filename = os.path.basename(template_url)
-    frappe.local.response.filecontent = filedata
-    frappe.local.response.type = "download"
+    generate_file_response(filedata, template_url)
 
 
 INSTRUCTIONS = {
@@ -150,7 +108,7 @@ def download_pdf(template_field_name: str, doc_name: str):
     """
     Generate a PDF document based on a template and download it
     """
-    template_url = get_template_url(template_field_name)
+    template_url = get_template_url_from_settings(template_field_name)
     filedata = get_generated_docx(
         template_url,
         doc_name,
