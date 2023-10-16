@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-10-14 16:56:41.302831",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "budget",
+  "naming_series",
+  "amended_from",
+  "column_break_1",
+  "spi_number",
+  "section_break_1",
+  "parties",
+  "section_break_2",
+  "observation"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha",
+   "reqd": 1
+  },
+  {
+   "default": "JP-.###.-.YYYY",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Secuencial",
+   "options": "JP-.###.-.YYYY"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gad Payment Justification",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "spi_number",
+   "fieldtype": "Int",
+   "label": "N\u00famero SPI",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "observation",
+   "fieldtype": "Small Text",
+   "label": "Observaciones"
+  },
+  {
+   "fieldname": "parties",
+   "fieldtype": "Table",
+   "label": "Beneficiarios",
+   "options": "Gad Payment Justification Party"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "budget",
+   "fieldtype": "Data",
+   "label": "Partida",
+   "length": 256,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-15 14:17:46.338107",
+ "modified_by": "Administrator",
+ "module": "Gad App Management",
+ "name": "Gad Payment Justification",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

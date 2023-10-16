@@ -50,10 +50,18 @@ def get_docx_template_io(template_url: str, is_private: bool = True):
     return BytesIO(filedata)
 
 
-def generate_file_response(filedata: bytes, template_url: str):
+def generate_file_response(
+        filedata: bytes,
+        template_url: str,
+        filename: str = None,
+):
     """
     Generate a file response
     """
-    frappe.local.response.filename = os.path.basename(template_url)
+    frappe.local.response.filename = (
+        os.path.basename(template_url)
+        if not filename
+        else filename
+    )
     frappe.local.response.filecontent = filedata
     frappe.local.response.type = "download"

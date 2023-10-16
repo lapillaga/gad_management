@@ -12,7 +12,6 @@ function downloadDocumentInNewTab(frm) {
 frappe.ui.form.on('Gad Memo', {
     refresh: function(frm) {
         if (!frm.doc.name.includes('new')) {
-            // Add custom buttons with icon
             frm.add_custom_button(__('Word'), function () {
                 downloadDocumentInNewTab(frm);
             }, __('Descargar'));

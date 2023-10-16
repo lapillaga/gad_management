@@ -18,7 +18,13 @@
   "column_break_2",
   "po_template_2",
   "tab_break_2",
-  "memo_template"
+  "memo_template",
+  "section_break_3",
+  "pj_template_1",
+  "pj_template_3",
+  "column_break_3",
+  "pj_template_2",
+  "pj_template_4"
  ],
  "fields": [
   {
@@ -87,12 +93,41 @@
    "fieldname": "memo_template",
    "fieldtype": "Attach",
    "label": "Plantilla general Memos"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break",
+   "label": "Justificaci\u00f3n compra"
+  },
+  {
+   "fieldname": "pj_template_1",
+   "fieldtype": "Attach",
+   "label": "1. Disponibilidad presupuestaria"
+  },
+  {
+   "fieldname": "pj_template_3",
+   "fieldtype": "Attach",
+   "label": "3. Orden de pago"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pj_template_2",
+   "fieldtype": "Attach",
+   "label": "2. Certificaci\u00f3n presupuestaria"
+  },
+  {
+   "fieldname": "pj_template_4",
+   "fieldtype": "Attach",
+   "label": "4. Evaluaci\u00f3n de documentos"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-10-05 20:57:25.157877",
+ "modified": "2023-10-15 09:39:37.562004",
  "modified_by": "Administrator",
  "module": "Gad App Management",
  "name": "Gad Settings",

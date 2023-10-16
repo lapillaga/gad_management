@@ -45,7 +45,7 @@
    "fieldname": "role",
    "fieldtype": "Select",
    "label": "Rol",
-   "options": "President\nVicepresident\nTreasurer\nSecretary",
+   "options": "President\nVicepresident\nTreasurer - Secretary\nTreasurer\nSecretary\nVocal\nT\u00e9cnico/a",
    "reqd": 1
   },
   {
@@ -75,7 +75,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-25 21:45:52.383056",
+ "modified": "2023-10-15 09:26:05.995149",
  "modified_by": "Administrator",
  "module": "Gad App Management",
  "name": "Gad Member",

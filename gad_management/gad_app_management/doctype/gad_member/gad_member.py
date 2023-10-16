@@ -4,6 +4,9 @@
 # import frappe
 from frappe.model.document import Document
 
+SECRETARY_TREASURER = "Treasurer - Secretary"
+PRESIDENT = "President"
+
 
 class GadMember(Document):
 
