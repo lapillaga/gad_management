@@ -6,13 +6,15 @@ from frappe import _
 from gad_management.common import get_template_url_from_settings, \
     get_docx_template_io, get_gad_settings, GENERATED_DOCX_PATH, \
     generate_file_response
-from gad_management.gad_app_management.doctype.gad_member.gad_member import \
-    SECRETARY_TREASURER, PRESIDENT
 from gad_management.gad_app_management.doctype.gad_member.selectors import \
     get_gad_member_by_role
 from gad_management.gad_app_management.doctype.gad_payment_justification.selectors import \
     get_gad_payment_justification_doc
 from gad_management.utils import get_formatted_date
+
+
+SECRETARY_TREASURER = "Treasurer - Secretary"
+PRESIDENT = "President"
 
 
 @frappe.whitelist()
