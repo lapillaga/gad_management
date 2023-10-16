@@ -1,0 +1,43 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"cz75UyH3hU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gesti\u00f3n GAD Parroquial</span>\",\"col\":12}},{\"id\":\"mFnGF8GeuU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Justificaciones de Pago\",\"col\":4}},{\"id\":\"N6l1f1zZbz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Usuarios\",\"col\":3}}]",
+ "creation": "2023-10-15 21:24:30.119941",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "heart-active",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "GAD App",
+ "links": [],
+ "modified": "2023-10-16 00:54:16.286201",
+ "modified_by": "Administrator",
+ "module": "Gad App Management",
+ "name": "GAD App",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 20.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Usuarios",
+   "link_to": "User",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Justificaciones de Pago",
+   "link_to": "Gad Payment Justification",
+   "type": "DocType"
+  }
+ ],
+ "title": "GAD App"
+}
